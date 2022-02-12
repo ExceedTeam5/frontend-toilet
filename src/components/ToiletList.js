@@ -12,28 +12,16 @@ const DUMMY_DATA = {
 };
 
 const ToiletList = () => {
-  const [currentState, setCurrentState] = useState(DUMMY_DATA);
+  const [currentState, setCurrentState] = useState();
 
-  useEffect(() => {
-    // axios
-    const newState = DUMMY_DATA;
-    setCurrentState(newState);
-  });
-
-  const toiletList = currentState.state.map((toilet) => (
-    <div className={classes['toilet-list']} key={toilet.id}>
-      <Toilet
-          toiletState={toilet.toiletState}
-          time={toilet.timeStamp}
-          estimateTime={currentState.estimateTime}
-        />
-    </div>
     
-  ));
+
   return (
     <Fragment> 
     <div className={classes['grid-container']}>
-      {toiletList}
+      <Toilet id={1}/>
+      <Toilet id={2}/>
+      <Toilet id={3}/>
     </div>
     </Fragment>);
  ;
