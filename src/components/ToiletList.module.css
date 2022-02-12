@@ -1,10 +1,7 @@
-
-.recipe {
-    margin: 40px;
-    position: relative;
-    max-width: 250px;
-    max-height: 350px;
-    border: 1px solid rgb(194, 194, 194);
-    border-radius: 0.2rem;
-    box-shadow: 3px 4px 1px rgb(197, 197, 197);
+.grid-container {
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    grid-gap: 10px;
+    background-color: transparent;
+    padding: 10px;
   }

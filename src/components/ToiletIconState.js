@@ -8,7 +8,7 @@ const ToiletIconState = (props) => {
   return (
     <div>
       
-    {!props.state ? <FaToiletPaper/> :  <FaToiletPaperSlash/>}
+    {!props.state ? <FaToiletPaper size={100}/> :  <FaToiletPaperSlash size={100}/>}
     
 
 

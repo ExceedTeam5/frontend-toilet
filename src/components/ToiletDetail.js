@@ -5,8 +5,10 @@ const ToiletDetail = (props) => {
   const [toiletState, setToiletState] = useState(0);
   const [startState, setStartState] = useState(false);
   const [timeState, setTimeState] = useState(0);
+
   useEffect(() => {
       const update = setInterval(() => {
+        console.log('hi')
         if (toiletState === 1){
           if (!startState) {
             setStartState(true);
@@ -26,19 +28,19 @@ const ToiletDetail = (props) => {
             setToiletState(1);
           }
 
-        }
-        
-        
+        }        
       }, 1000)
       return  () => {
         clearInterval(update);
       }
-  })
+  });
+
   return (
     <div>
-      {!toiletState == 0 ? <h1>busy</h1> : <h1>open</h1>}
+      {!toiletState == 0 ? <h2>busy</h2> : <h2>Available</h2>}
       <ToiletIconState state={toiletState}/>
-      {startState && <h1>time {timeState}</h1>}
+      {!toiletState == 0 && <p> In used: 20s Since: 12:34</p>}
+      {startState && <h2>time {timeState} sec</h2>}
     </div>
   )
 }

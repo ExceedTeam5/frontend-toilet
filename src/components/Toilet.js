@@ -5,7 +5,6 @@ const Toilet = (props) => {
   
   return (
 
-      
     <div className={classes.toilet}>
       <ToiletDetail toiletState={props.toiletState} time={props.time} estimateTime={props.estimateTime}/>
     </div>

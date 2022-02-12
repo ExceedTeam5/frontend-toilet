@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Toilet from "./Toilet";
 import classes from "./ToiletList.module.css";
 
 const DUMMY_DATA = {
   state: [
-    {id:0, toiletState: 0, timeStamp: 164484743741 },
-    {id:1, toiletState: 1, timeStamp: 1644664683741 },
-    {id:2, toiletState: 1, timeStamp: 1644644683741 },
+    {id:0, toiletState: 0, timeStamp: 16446743741, startTime: 16446743741},
+    {id:1, toiletState: 1, timeStamp: 1644670683741, startTime: 164467437411 },
+    {id:2, toiletState: 1, timeStamp: 1644661880001, startTime: 164467437411 },
   ],
   estimateTime: 123456,
 };
@@ -21,14 +21,22 @@ const ToiletList = () => {
   });
 
   const toiletList = currentState.state.map((toilet) => (
-    <Toilet
-      toiletState={toilet.toiletState}
-      time={toilet.timeStamp}
-      estimateTime={currentState.estimateTime}
-    />
+    <div className={classes['toilet-list']} key={toilet.id}>
+      <Toilet
+          toiletState={toilet.toiletState}
+          time={toilet.timeStamp}
+          estimateTime={currentState.estimateTime}
+        />
+    </div>
+    
   ));
-  return <div>
-    <h2>Toilet List</h2>{toiletList}</div>;
+  return (
+    <Fragment> 
+    <div className={classes['grid-container']}>
+      {toiletList}
+    </div>
+    </Fragment>);
+ ;
 };
 
 export default ToiletList;
