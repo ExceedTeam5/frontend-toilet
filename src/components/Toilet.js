@@ -6,4 +6,4 @@ const Toilet = () => {
   )
 }
 
-export default Toilet
+export default Toilet 
