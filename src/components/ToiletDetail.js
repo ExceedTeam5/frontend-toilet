@@ -36,10 +36,9 @@ const ToiletDetail = (props) => {
   })
   return (
     <div>
-      {toiletState == 0 ? <h1>busy</h1> : <h1>open</h1>}
+      {!toiletState == 0 ? <h1>busy</h1> : <h1>open</h1>}
       <ToiletIconState state={toiletState}/>
       {startState && <h1>time {timeState}</h1>}
-      
     </div>
   )
 }

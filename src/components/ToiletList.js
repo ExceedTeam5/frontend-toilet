@@ -27,7 +27,8 @@ const ToiletList = () => {
       estimateTime={currentState.estimateTime}
     />
   ));
-  return <div>{toiletList}</div>;
+  return <div>
+    <h2>Toilet List</h2>{toiletList}</div>;
 };
 
 export default ToiletList;
