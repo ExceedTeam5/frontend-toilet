@@ -1,9 +1,19 @@
 import React from 'react'
+import { FaToiletPaper, FaToiletPaperSlash} from 'react-icons/fa';
 
-const ToiletIconState = () => {
+
+
+
+const ToiletIconState = (props) => {
   return (
-    <div>ToiletIconState</div>
+    <div>
+      
+    {!props.state ? <FaToiletPaper/> :  <FaToiletPaperSlash/>}
+    
+
+
+    </div>
   )
 }
 
-export default ToiletIconState
+export default ToiletIconState;

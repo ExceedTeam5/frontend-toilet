@@ -1,17 +1,33 @@
-import React, { useEffect } from 'react';
-import Toilet from './Toilet';
-import classes from './ToiletList.module.css';
+import React, { useEffect, useState } from "react";
+import Toilet from "./Toilet";
+import classes from "./ToiletList.module.css";
 
-const DUMMY_DATA = {state:[{toiletState: true, timeStamp: 12341},{toiletState: true, timeStamp: 12342},
-  {toiletState: true, timeStamp: 12346}], estimateTime: 123456};
+const DUMMY_DATA = {
+  state: [
+    {id:0, toiletState: 0, timeStamp: 164484743741 },
+    {id:1, toiletState: 1, timeStamp: 1644664683741 },
+    {id:2, toiletState: 1, timeStamp: 1644644683741 },
+  ],
+  estimateTime: 123456,
+};
 
 const ToiletList = () => {
+  const [currentState, setCurrentState] = useState(DUMMY_DATA);
 
-  const listToilet = DUMMY_DATA.state.map((toilet) => <Toilet toiletState={toilet.toiletState} time={toilet.timeStamp} estimateTime={DUMMY_DATA.estimateTime}/>);
-  return (
-    <div>{ listToilet }</div>
-    
-  )
-}
+  useEffect(() => {
+    // axios
+    const newState = DUMMY_DATA;
+    setCurrentState(newState);
+  });
 
-export default ToiletList
+  const toiletList = currentState.state.map((toilet) => (
+    <Toilet
+      toiletState={toilet.toiletState}
+      time={toilet.timeStamp}
+      estimateTime={currentState.estimateTime}
+    />
+  ));
+  return <div>{toiletList}</div>;
+};
+
+export default ToiletList;

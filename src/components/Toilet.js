@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { Fragment, useEffect, useState } from 'react';
+import ToiletDetail from './ToiletDetail';
 
-const Toilet = () => {
+const Toilet = (props) => {
+  
   return (
-    <div>Toilet</div>
+    <Fragment>
+      <ToiletDetail toiletState={props.toiletState} time={props.time} estimateTime={props.estimateTime}/>
+    </Fragment>
+    
   )
 }
 
